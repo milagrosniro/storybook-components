@@ -18,11 +18,15 @@ export interface MyLabelProps{
 
   allCaps: boolean
 
+  backgroundColor?: string
+
 }
 
-export const MyLabel = ({label= 'No label', size= 'normal', color='primary', allCaps= false}: MyLabelProps) => {
+export const MyLabel = ({label= 'No label', size= 'normal', color='primary', allCaps= false,
+backgroundColor='trasnparent'}: MyLabelProps) => {
   return (
-    <span className={`label ${size} text-${color}`}>
+    <span className={`label ${size} text-${color}`}
+    style={{backgroundColor: backgroundColor}} >
         {allCaps ? label.toLocaleUpperCase() : label}
     </span>
   )
